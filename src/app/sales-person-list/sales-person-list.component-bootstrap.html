@@ -1,0 +1,27 @@
+<h2>Sales person list</h2>
+<br/>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>SalesVolume</th>
+            <th>Met Quota</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let salesperson of salesPersonsList">
+            <td>{{salesperson.firstName}}</td>
+            <td>{{salesperson.lastName}}</td>
+            <td>{{salesperson.email}}</td>
+            <td>{{salesperson.salesVolume | currency:'INR'}}</td>
+            <td> 
+                <div *ngIf="salesperson.salesVolume>=20; else elseblock">Yes</div>
+                <ng-template #elseblock>No</ng-template>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+Person with top SalesVolume - {{salesPersonsList[2].firstName}}
