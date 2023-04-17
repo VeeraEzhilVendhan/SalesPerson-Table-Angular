@@ -11,13 +11,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let salesperson of salesPersonsList">
+        <tr *ngFor="let salesperson of salesPersonsList" [ngClass]="{'table-success':  salesperson.salesVolume >=30}">
             <td>{{salesperson.firstName}}</td>
             <td>{{salesperson.lastName}}</td>
             <td>{{salesperson.email}}</td>
             <td>{{salesperson.salesVolume | currency:'INR'}}</td>
             <td> 
-                <div *ngIf="salesperson.salesVolume>=20; else elseblock">Yes</div>
+                <div *ngIf="salesperson.salesVolume>=30; else elseblock">Yes</div>
                 <ng-template #elseblock>No</ng-template>
             </td>
         </tr>
