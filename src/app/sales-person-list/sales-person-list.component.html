@@ -1,0 +1,22 @@
+<h2>Sales person list</h2>
+
+<table border="1px">
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>SalesVolume</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let salesperson of salesPersonsList">
+            <td>{{salesperson.firstName}}</td>
+            <td>{{salesperson.lastName}}</td>
+            <td>{{salesperson.email}}</td>
+            <td>{{salesperson.salesVolume}}</td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+Person with top SalesVolume - {{salesPersonsList[2].firstName}}
